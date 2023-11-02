@@ -1,0 +1,109 @@
+﻿
+@{
+    Layout = null;
+}
+<html>
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <title>Login</title>
+    <!-- CSS only -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        body {
+            background: url('https://c0.wallpaperflare.com/preview/565/228/846/japanese-japan-restaurant-culture.jpg') no-repeat;
+            background-size: cover;
+        }
+
+        .login-form {
+            background-color: black;
+            opacity: 85%;
+            width: 350px;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            position: absolute;
+            color: #fff;
+            border-radius: 15px;
+        }
+
+            .login-form h1 {
+                font-size: 40px;
+                text-align: center;
+                margin: 40px 0;
+            }
+
+            .login-form p {
+                font-size: 20px;
+                margin: 15px 0;
+            }
+
+            .login-form input {
+                font-size: 16px;
+                width: 100%;
+                padding: 15px 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+                border: 0;
+                outline: none;
+                border-radius: 5px;
+            }
+
+            .login-form button {
+                text-align: center;
+                font-size: 18px;
+                font-weight: bold;
+                margin: 20px 0;
+                padding: 10px 15px;
+                width: 50%;
+                border-radius: 8px;
+                border: 0;
+                background-color: red;
+                float:
+            }
+    </style>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $("#btnLogin").click(function () {
+                CheckLogin();
+            });
+        });
+        function CheckLogin() {
+            var username = "pod4members";
+            var password = "restaurant";
+            var entered_username = $("#txtname").val();
+            var entered_password = $("#txtpassword").val();
+            if (entered_username == username && entered_password == password) {
+                window.location.replace('https://localhost:44389/Home/Index');
+                
+            }
+            else {
+                alert("Invalid UserID or Password.Check Credentials.");
+            }
+
+        }
+
+    </script>
+</head>
+<body>
+    <div class="login-form container">
+        <h1>Login</h1>
+        <form>
+            <p>User Name:</p>
+            <input type="text" id="txtname" name="user" placeholder="User Name" />
+            <p>Password:</p>
+            <input type="password" id="txtpassword"  name="password" placeholder="Password"/>
+            <div class="text-center">
+                <button id="btnLogin" type="button">Login</button>
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>
+
